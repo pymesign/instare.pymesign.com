@@ -1,0 +1,8 @@
+// Variables, Functions and Mixins
+@import '../tools/tools';
+
+:root {
+  --instare-color-primary: #{$standard-color-primary};
+  --instare-color-link: #{$standard-color-link};
+  --instare-color-hover: #{$standard-color-hover};
+}
