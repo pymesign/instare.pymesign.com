@@ -28,6 +28,6 @@
 
     pauseOnHover: false,
 
-    manualAdvance: true,
+    manualAdvance: false,
   });
 })(jQuery);

@@ -256,7 +256,26 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 
 		<?php if ($this->countModules('sidebar-right', true)) : ?>
 			<div class="grid-child container-sidebar-right">
-				<jdoc:include type="modules" name="sidebar-right" style="card" />
+				<div class="w3-bar w3-black">
+					<button class="w3-bar-item w3-button tablink w3-red" onclick="openLink(event, 'Fade1')">Youtube</button>
+					<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Fade2')">Instagram</button>
+					<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Fade3')">Linkedin</button>
+				</div>
+
+				<div id="Fade1" class="w3-container city w3-animate-opacity">
+					<jdoc:include type="modules" name="sidebar-right" style="card" />
+				</div>
+
+				<div id="Fade2" class="w3-container city w3-animate-opacity" style="display:none">
+					<jdoc:include type="modules" name="sidebar-right-dos" style="card" />
+				</div>
+
+				<div id="Fade3" class="w3-container city w3-animate-opacity" style="display:none">
+					<h2>Linkedin</h2>
+					<p>Aquí mostrar contenido de Linkedin.</p>
+				</div>
+
+
 			</div>
 		<?php endif; ?>
 
@@ -297,7 +316,9 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 
 	<?php
 	$wa->registerAndUseStyle('aos', $templatePath . '/css/aos.css');
+	$wa->registerAndUseStyle('aos', $templatePath . '/css/w3.css');
 	?>
+
 	<script src="<?php echo $templatePath . '/js/jquery.nivo.slider.js' ?>"></script>
 	<script src="<?php echo $templatePath . '/js/home.js' ?>"></script>
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -305,6 +326,22 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 		AOS.init({
 			disable: 'mobile', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
 		});
+	</script>
+
+	<script>
+		function openLink(evt, animName) {
+			var i, x, tablinks;
+			x = document.getElementsByClassName("city");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink");
+			for (i = 0; i < x.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+			}
+			document.getElementById(animName).style.display = "block";
+			evt.currentTarget.className += " w3-red";
+		}
 	</script>
 
 </body>

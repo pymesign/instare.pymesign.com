@@ -35,6 +35,7 @@
 		<position>breadcrumbs</position>
 		<position>sidebar-left</position>
 		<position>sidebar-right</position>
+		<position>sidebar-right-dos</position>
 		<position>bottom-a</position>
 		<position>bottom-b</position>
 		<position>footer</position>
