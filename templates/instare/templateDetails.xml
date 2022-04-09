@@ -43,8 +43,8 @@
 		<position>inmenu</position>
 		<position>insidebar</position>
 		<position>cabecera</position>
-		<position>head-l</position>
-		<position>head-r</position>
+		<position>head-r1</position>
+		<position>head-r2</position>
 	</positions>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/tpl_instare.ini</language>

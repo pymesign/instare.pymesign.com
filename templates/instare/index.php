@@ -200,20 +200,33 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 
 	<div class="head-wrapper">
 		<?php if ($this->countModules('cabecera', true)) : ?>
-			<div class="box cabecera">
+			<div class="cabecera">
 				<jdoc:include type="modules" name="cabecera" style="none" />
 			</div>
 		<?php endif; ?>
 
-		<?php if ($this->countModules('head-l', true)) : ?>
-			<div class="box head-l">
-				<jdoc:include type="modules" name="head-l" style="none" />
-			</div>
-		<?php endif; ?>
+		<?php if ($this->countModules('head-r1', true)) : ?>
+			<div class="redes">
+				<div class="w3-bar w3-black">
+					<button class="w3-bar-item w3-button tablink w3-red" onclick="openLink(event, 'Fade1')">Youtube</button>
+					<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Fade2')">Instagram</button>
+					<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Fade3')">Linkedin</button>
+				</div>
 
-		<?php if ($this->countModules('head-r', true)) : ?>
-			<div class="box head-r">
-				<jdoc:include type="modules" name="head-r" style="none" />
+				<div id="Fade1" class="w3-container city w3-animate-opacity mt-3">
+					<jdoc:include type="modules" name="head-r1" style="card" />
+				</div>
+
+				<div id="Fade2" class="w3-container city w3-animate-opacity mt-3" style="display:none">
+					<jdoc:include type="modules" name="head-r2" style="card" />
+				</div>
+
+				<div id="Fade3" class="w3-container city w3-animate-opacity mt-3" style="display:none">
+					<h2>Linkedin</h2>
+					<p>Aquí mostrar contenido de Linkedin.</p>
+				</div>
+
+
 			</div>
 		<?php endif; ?>
 	</div>
@@ -256,26 +269,7 @@ $wa->getAsset('style', 'fontawesome')->setAttribute('rel', 'lazy-stylesheet');
 
 		<?php if ($this->countModules('sidebar-right', true)) : ?>
 			<div class="grid-child container-sidebar-right">
-				<div class="w3-bar w3-black">
-					<button class="w3-bar-item w3-button tablink w3-red" onclick="openLink(event, 'Fade1')">Youtube</button>
-					<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Fade2')">Instagram</button>
-					<button class="w3-bar-item w3-button tablink" onclick="openLink(event, 'Fade3')">Linkedin</button>
-				</div>
-
-				<div id="Fade1" class="w3-container city w3-animate-opacity">
-					<jdoc:include type="modules" name="sidebar-right" style="card" />
-				</div>
-
-				<div id="Fade2" class="w3-container city w3-animate-opacity" style="display:none">
-					<jdoc:include type="modules" name="sidebar-right-dos" style="card" />
-				</div>
-
-				<div id="Fade3" class="w3-container city w3-animate-opacity" style="display:none">
-					<h2>Linkedin</h2>
-					<p>Aquí mostrar contenido de Linkedin.</p>
-				</div>
-
-
+				<jdoc:include type="modules" name="sidebar-right" style="card" />
 			</div>
 		<?php endif; ?>
 
